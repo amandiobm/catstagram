@@ -1,18 +1,14 @@
-// Exercise 6: Routing
-// import Link from react-router-dom
-// use the Link component to link to each route with a 'to' property
-// check that your links work!
-
 import React from "react";
+import {Link} from "react-router-dom";
 
 class Header extends React.Component {
   render() {
     return (
       <ul className="Header">
         <li className="Logo">Catstagram</li>
-        <li>Home</li>
-        <li>About</li>
-        <li>Profile</li>
+        <li><Link to="/">Home</Link></li>
+        <li><Link to="/profile">Profile</Link></li>
+        <li><Link to="/about">About</Link></li>
       </ul>
     );
   }

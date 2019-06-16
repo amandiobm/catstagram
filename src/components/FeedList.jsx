@@ -7,7 +7,13 @@ class FeedList extends React.Component {
     return (
       <div className="FeedList">
         {list.map((photo, index) => {
-          return <FeedItem key={photo.id} photo={photo} />;
+          return (
+            <FeedItem
+              key={photo.id}
+              photo={photo}
+              handle={this.props.handleRemovePhoto}
+            />
+          );
         })}
       </div>
     );

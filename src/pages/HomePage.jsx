@@ -16,8 +16,20 @@ class HomePage extends React.Component {
     });
   };
 
+  handleRemovePhoto = index => {
+    this.setState(prevState => {
+      const photo = prevState.photos.find((item, i) => {
+        if (item.id === parseInt(index, 10)) {
+          return i;
+        }
+      });
+      console.log(photo);
+      return {  };
+    });
+  };
+
   get something() {
-    return 'something'
+    return "something";
   }
 
   render() {
@@ -25,10 +37,11 @@ class HomePage extends React.Component {
       <div className="HomePage">
         <InteractiveBox />
         <ImageUploaderForm handleAddPhoto={this.handleAddPhoto} />
-        {
-          this.something
-        }
-        <FeedList list={this.state.photos} />
+        {this.something}
+        <FeedList
+          list={this.state.photos}
+          handleRemovePhoto={this.handleRemovePhoto}
+        />
       </div>
     );
   }
